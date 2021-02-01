@@ -1,0 +1,35 @@
+
+class Solution {
+    
+    Vector<Long> nthRowOfPascalTriangle(int n) {
+        
+            Vector<Long> ans = new Vector<Long>();
+            ans.add(new Long(1));
+            if(n == 1)
+              return ans;
+            ans.add(new Long(1));
+            if(n == 2){
+                return ans;
+            }
+            return nthRowOf(1,n,ans);
+      }
+    
+      Vector<Long> nthRowOf(int row,int n, Vector<Long> ans){
+          
+           if(row == n-1)
+           return ans;
+           int i=1;
+           int size=ans.size();
+           Vector<Long> ans1 = new Vector<Long>();
+           ans1.add(new Long(1));
+           ans1.add(new Long(1));
+           long m = 1000000007;
+           while(i<=size-1){
+               Long x = ans.get(i-1)%m;
+               Long y = ans.get(i)%m;
+               ans1.add(i,(x+y)%m);
+               i=i+1;
+           }
+           return nthRowOf(row+1,n,ans1);
+       }
+}
