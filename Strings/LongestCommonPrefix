@@ -1,4 +1,4 @@
-
+/* https://practice.geeksforgeeks.org/problems/longest-common-prefix-in-an-array5129/0/?track=md-string&batchId=144#  */
 class Solution{
     String longestCommonPrefix(String arr[], int n){
 
