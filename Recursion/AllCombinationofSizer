@@ -1,0 +1,38 @@
+/*
+
+https://www.geeksforgeeks.org/print-all-possible-combinations-of-r-elements-in-a-given-array-of-size-n/ 
+Print all possible combinations of k elements in a given string  of size n, where k<=n.
+
+*/
+
+import java.util.Scanner;
+
+public class generateallStringn {
+	  static char a[];
+	  static int n1=0;
+	  static String s;
+   public static void main(String[] args) {
+	    Scanner in=new Scanner(System.in);
+	    int n=in.nextInt();
+	    n1=n;
+	    a=new char[n];
+	    s=in.next();
+	    int n2=in.nextInt();
+	    Generate(n2,n);	
+	    
+    }
+     private static void Generate(int n, int k) {
+	     if(n<1) {
+	    	 for(int i=0;i<n1;i++) {
+	    		 System.out.print(a[i]);
+	    	 }
+	    	 System.out.println(); 	    	 
+	     }
+	     else {
+	    	 for(int i=0;i<k;i++) {
+	    		 a[n-1]=s.charAt(i);
+	    		 Generate(n-1,k);
+	    	 }
+	     }
+   }
+}
