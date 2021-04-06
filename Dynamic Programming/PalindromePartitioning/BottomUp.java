@@ -47,7 +47,15 @@ class Solution{
           int min = Integer.MAX_VALUE; 
           for(int k=i;k<j;k++){
               
-             int temp = 1 +  solve(str,i,k) + solve(str,k+1,j);
+            if(dp[i][k]==-1){
+                dp[i][k] =   solve(str,i,k);
+             }
+             
+             if(dp[k+1][j]==-1){
+                dp[k+1][j] = solve(str,k+1,j);
+             }
+             
+             int temp = 1 + dp[i][k] + dp[k+1][j];
              if(temp<min)
                 min = temp;
           }
