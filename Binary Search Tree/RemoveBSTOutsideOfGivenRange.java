@@ -42,3 +42,26 @@ class Solution {
            inOrder(node.right,l,r);
     }
 }
+
+///////
+
+/*
+    Node removekeys(Node root, int low, int high) {
+        // code here
+          if(root == null)
+               return null;
+        
+          if(root.data < low)
+                return removekeys(root.right,low,high);
+          
+          else if(root.data > high)
+               return removekeys(root.left,low,high);
+          
+          else{
+              root.left = removekeys(root.left,low,high);
+              root.right = removekeys(root.right,low,high);
+              return root;
+          }
+    }
+    
+   */ 
